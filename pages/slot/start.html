@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>ぼくのスロット</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 70px;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #ffffff;
+
+        }
+        .up{
+          border-radius: 50px;
+          background-color: #B2DE97;
+          color:white;
+          height:180px;
+          width:180px;
+          box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        .down{
+          margin-top:300px;
+          border-radius: 50px;
+          background-color: #75A458;
+          color:white;
+          height:180px;
+          width:180px;
+          box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        .start{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 30px;
+          font-family: 'Noto Sans JP', sans-serif;
+          background-color: #ffffff;
+          height: 300px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="title">
+        <h1 class="up">ぼ</h1>
+        <h1 class="down">く</h1>
+        <h1 class="up">の</h1>
+        <h1 class="down">ス</h1>
+        <h1 class="up">ロ</h1>
+        <h1 class="down">ッ</h1>
+        <h1 class="up">ト</h1>
+    </div>
+    <div class="start">スペースキーでスタート</div>
+
+    <script>
+      document.addEventListener("keypress",function(event){
+
+        if(event.key ===" "){
+          window.location.href = "/pages/slot/play.html";
+        }
+      });
+
+    </script>
+  </body>
+</html>

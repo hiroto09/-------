@@ -1,0 +1,117 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body{
+  background-image: url(/img/heigen.PNG);
+  background-size: cover;
+
+}
+main {
+  display: flex;
+  margin-top: 100px;
+  margin-left: 40px;
+  font-weight:bold;
+}
+.list {
+  align-items: center;
+  margin-left: 100px;
+  height: 100%;
+  width: 50%;
+  list-style: none;
+  font-size: 25px;
+}
+
+.money {
+  margin-top: 50px;
+  display: flex;
+  border: 3px solid #000000;
+  background-color: white;
+  border-radius: 5px;
+  width: 300px;
+  height: 30px;
+  font-size: 25px;
+}
+.action {
+  text-align: center;
+  font-size: 30px;
+  color: #000000;
+  margin-top: 100px;
+  height:50px;
+  background-color: #eb634b;
+}
+.action:hover {
+  background-color: #d14040;
+  transform: translateY(-5px);
+}
+.danmakau{
+  text-align: center;
+  font-size: 30px;
+  height:50px;
+  color: #000000;
+  background-color:#8aceff;
+}
+.danmakau:hover {
+  background-color:#3f8cc3;
+  transform: translateY(-5px);
+}
+.slot{
+  text-align: center;
+  font-size: 30px;
+  height:50px;
+  color: #000000;
+  background-color:#91e85b;
+}
+.slot:hover{
+  background-color:#6ba04b;
+  transform: translateY(-5px);
+}
+.boss{
+  text-align: center;
+  font-size: 30px;
+  height:50px;
+  color:white;
+  background-color:#4B4B4B;
+}
+.boss:hover{
+  background-color:#3d3a3a;
+  transform: translateY(-5px);
+}
+
+li {
+  margin-top: 50px;
+  border: 3px solid #000000;
+  border-radius: 5px;
+}
+a{
+  width: auto;
+  text-decoration: none;
+  background-color: #d14040;
+}
+
+.title {
+  margin-top: 200px;
+  height: 100%;
+  width: 50%;
+  font-size: 25px;
+  text-align: center;
+}
+.title h1 {
+  font-size: 70px;
+  font-weight: bold;
+}
+.img {
+  margin-top: 110px;
+}
+.yakuza {
+  transform: scaleX(-1);
+  margin-right: 10%;
+}
+.pages{
+  width: 300px;
+
+}
+.okanetoboku{
+  color:black;
+
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ぼくの弾幕ゲーム</title>
+    <p class = "neko">
+      <img src="ねこ.png">
+  </p>
+  <p class = "coin">
+    <img src="お金 s.png">
+</p>
+</p>
+<p class = "isi">
+  <img src="石s.png">
+</p>
+    <style>
+      .neko{
+        position: fixed;
+         top: 150px;
+         left: 50px;
+      }
+
+      
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      canvas {
+        background: #cbf6ca;
+        position: fixed;
+        inset: 0;
+        margin: auto;
+      }
+      
+      .zandaka{
+        font-size: 30px;
+        font-weight: bold;
+        background: #b0dcfa; /*背景色*/
+        padding: 0.5em;/*文字周りの余白*/
+        color: white;/*文字を白に*/
+        border-radius: 0.5em;/*角の丸み*/
+        position: fixed;
+        top: 100px;
+        left: 1130px;
+      }
+      .coinget{
+        font-size: 30px;
+        font-weight: bold;
+        position: fixed;
+        top: 600px;
+        left: 1230px;
+        color: #47b9ce;
+      }
+      .damage{
+        font-size: 30px;
+        font-weight: bold;
+        position: fixed;
+        top: 680px;
+        left: 1240px;
+        color: #47b9ce;
+      }
+      /* .combo{
+        font-size: 30px;
+        font-weight: bold;
+        position: fixed;
+        top: 600px;
+        left: 30px;
+        color: #47b9ce;
+      } */
+      .coin{
+        position: fixed;
+        top:600px;
+        left:1160px;
+      }
+      .isi{
+        position: fixed;
+        top:680px;
+        left:1160px;
+      }
+
+      .combo {
+  position: fixed;
+  margin: 2em 600px 2em 100px;
+  padding: 50px;
+  background: #b0dcfa;
+  border-radius: 120px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffff;
+}
+
+.combo:before {  
+  content: "";
+  position: absolute;
+  left: -38px;
+  width: 26px;
+  height: 24px;
+  bottom: -40px;
+  background: #b0dcfa;
+  border-radius: 50%;
+}
+
+.combo:after {
+  content: "";
+  position: absolute;
+  left: -24px;
+  width: 40px;
+  height: 36px;
+  bottom: -10px;
+  background: #b0dcfa;
+  border-radius: 50%;
+}
+.combo p {
+  margin: 0; 
+  padding: 0;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <p><span id="zandaka" class="zandaka"></span></p>
+    <p><span id="coinget" class="coinget"></span></p> 
+    <p><span id="damage" class="damage"></span></p>
+    <p><span id="combo" class="combo"></span></p>
+    <canvas id="can"></canvas>
+    <script src="danmaku.js"></script>
+  </body>
+  <script>
+    
+  </script>
+</html>

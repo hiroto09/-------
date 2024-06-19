@@ -1,0 +1,422 @@
+ /* 背景枠 */
+ #battle-frame {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px; 
+    height: 750px; 
+    overflow: hidden; /* はみ出し部分を非表示に */
+    border: 5px solid black; /* 枠線 */
+    background-image: url('img/RPG背景.png'); /* 背景画像の設定 */
+    background-size: cover; /* 背景画像を枠に合わせて表示 */
+    background-position: center center; /* 背景画像を枠の中心に配置 */
+    z-index: 1; 
+}
+
+
+
+
+/* 強化画面 */
+#kyouka-screen-1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: block;
+    z-index: 9;
+    border-radius: 10px;
+}
+#kyouka-screen-2{
+    position:  absolute;
+    margin: 0 auto;
+    width: 1200px; 
+    height: 500px; 
+    background-color: rgb(66, 66, 66);
+    display: block;
+    z-index: 10; 
+    border-radius: 10px; /* 角を丸める */
+    border: 2px solid white; /* 枠線を追加 */
+}
+#kyouka-screen-3{
+    position:  absolute;
+    margin: 0 auto;
+    right: 50px;
+    top: 25px;
+    width: 1100px; 
+    height: 450px; 
+    background-color: rgb(0, 0, 0);
+    display: block;
+    z-index: 11; 
+    border-radius: 10px; /* 角を丸める */
+    border: 2px solid white; /* 枠線を追加 */
+}
+/*強化画面　残高*/
+#kyouka-coin {
+    position: absolute;
+    top: 380px; 
+    right: 70px; 
+    width: 400px; 
+    height: 70px; 
+    background-color: rgb(0, 0, 0);
+    display: block;
+    font-size: 32px;
+    border: 4px solid white; /* 枠線を追加 */
+    color: white; /* テキストの色を白に設定 */
+    z-index: 12;
+    display: flex; /* テキストを上下中央配置 */
+    padding-left: 20px;
+    align-items: center;
+}
+/*　ステータス強化　項目 */
+#cost {
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    color: white;
+    font-size: 20px;
+    z-index: 12;
+}
+/* 強化ステータス */
+#kyouka-st-koumoku {
+    position: absolute;
+    top: 80px;
+    left: 120px;
+    color: white;
+    font-size: 40px;
+    z-index: 12;
+}
+#kyouka-st-atai {
+    position: absolute;
+    top: 80px;
+    left: 260px;
+    color: white;
+    font-size: 40px;
+    z-index: 12;
+}
+#kyouka-st-huyasu {
+    position: absolute;
+    top: 80px;
+    left: 450px;
+    color: white;
+    font-size: 40px;
+    z-index: 12;
+}
+#kyouka-st-btn {
+    position: absolute;
+    top: 80px;
+    left: 700px;
+    color: white;
+    font-size: 40px;
+    z-index: 12;
+}
+#kyouka-st-syouhi {
+    position: absolute;
+    top: 80px;
+    width: 400px; 
+    left: 900px;
+    color: white;
+    font-size: 40px;
+    z-index: 12;
+}
+.kyouka-st-koumoku,.kyouka-st-atai,.kyouka-st-huyasu,.kyouka-st-syouhi {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 400px;
+    width: 500px;
+    
+}
+
+#hp-up-btn,#hp-down-btn,#a-up-btn,#a-down-btn,#s-up-btn,#s-down-btn {
+    height: 50px;
+    width: 50px;
+    font-size: 32px; 
+}
+/* 戦闘開始ボタン */
+#start-battle-btn {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 150px;
+    width: 800px;
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+    z-index: 11; 
+    font-size: 64px;
+    border-radius: 10px;
+}
+/* 戻るボタン */
+#modoru-btn {
+    position: absolute;
+    bottom: 52px;
+    left: 50px;
+    transform: translateX(-50%);
+    height: 50px;
+    width: 100px;
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+    z-index: 11; 
+    font-size: 20px;
+    border-radius: 10px;
+}
+ 
+
+
+
+
+
+/* ボス */
+#boss {
+    position: absolute; 
+    top: 27%; /* 上端 親の30%の位置 */
+    left: 50%; /* 左端 親の50%の位置 */
+    transform: translate(-50%, -50%); /* なんかいる */
+    width: 320px; 
+    height: auto; 
+    z-index: 4;
+}
+/* ねこ */
+#neko {
+    position: absolute; 
+    top: 40%; /* 上端 親の30%の位置 */
+    left: 45%; /* 左端 親の50%の位置 */
+    transform: translate(-50%, -50%); /* なんかいる */
+    width: 200px; 
+    height: auto; 
+    z-index: 3;
+}
+
+/* コマンド枠 */
+#command-frame {
+    position: absolute; 
+    bottom: 0%; /* 下に配置 */
+    width: 100%; 
+    height: 32%; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-top: 5px solid white; /* 上 白線 */
+    color: white; /* テキストの色を白に設定 */
+    padding: 20px; /* 内側の余白を設定 */
+    text-align: center; /* テキストを中央揃え */
+    z-index: 2;
+}
+
+/* 勇者の顔 */
+#player {
+    position: absolute; 
+    bottom: 70px; /* 下から　配置 */
+    left: 40px; /* 左から　配置 */
+    width: auto; 
+    height: 210px; 
+    object-fit: cover; /* 枠に合わせてクリップ */
+    /* border: 5px solid white; /* 枠線 */ 
+    border-radius: 10%; /* 角を丸く */
+    z-index: 4;
+}
+
+/* ステータス表示用 */
+#player-hp {
+    position: absolute;
+    bottom: 30px; /* 下から */
+    left: 70px; /* 左から */
+    color: white; /* テキストの色を白に設定 */
+    font-size: 25px;
+    z-index: 4;
+}
+#player-coin {
+    position: absolute;
+    bottom: 5px; /* 下から */
+    left: 70px; /* 左から */
+    color: white; /* テキストの色を白に設定 */
+    font-size: 25px;
+    z-index: 4;
+}
+#player-st-waku{
+    position:  absolute;
+    bottom: 3px; /* 下から */
+    left: 10px; /* 左から */
+    width: 250px; 
+    height: 60px; 
+    background-color: black;
+    display: block;
+    z-index: 3; 
+    border-radius: 0px; /* 角を丸める */
+    border: 5px solid white; /* 枠線を追加 */
+}
+#boss-hp {
+    position: absolute;
+    top: 52%; /* 上端 親の　%の位置 */
+    left: 500px; /* 左端 親の　%の位置 */
+    color: white; /* テキストの色を白に設定 */
+    font-size: 40px;
+    z-index: 4;
+}
+#boss-st-waku{
+    position:  absolute;
+    top: 52%; /* 上端 親の　%の位置 */
+    left: 450px; /* 左端 親の　%の位置 */
+    width: 300px; 
+    height: 50px; 
+    background-color: black;
+    display: block;
+    z-index: 3; 
+    border-radius: 0px; /* 角を丸める */
+    border: 5px solid white; /* 枠線を追加 */
+}
+/*ステータス変化*/
+#player-a-up {
+    position: absolute; 
+    bottom: 220px; /* 下から　配置 */
+    left: 40px; /* 左から　配置 */
+    width: auto; 
+    height: 50px; 
+    border-radius: 10%; /* 角を丸く */
+    display: none;
+    z-index: 5; 
+}
+#kaneganaru {
+    position: absolute; 
+    bottom: 160px; /* 下から　配置 */
+    left: 40px; /* 左から　配置 */
+    width: auto; 
+    height: 50px; 
+    border-radius: 10%; /* 角を丸く */
+    display: none;
+    z-index: 5; 
+}
+#boss-a-down {
+    position: absolute; 
+    top: 30px; 
+    left: 450px; /* 左から　配置 */
+    width: auto; 
+    height: 70px; 
+    border-radius: 10%; /* 角を丸く */
+    display: none;
+    z-index: 5;
+}
+
+/* 戦闘コマンド */
+#sentou-command {
+    position: absolute;
+    bottom: 50px;
+    left: 280px;
+    color: white;
+    font-size: 40px;
+    z-index: 5;
+}
+.sentou-command {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 1000px;
+}
+#kougeki-btn, #okane-btn, #nigeru-btn {
+    color: rgb(255, 255, 255);
+    height: 60px;
+    width: 150px;
+    font-size: 40px;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none; /* ボーダーを削除 */
+    margin-top: 0px;
+    cursor: pointer; 
+}
+#kougeki-btn:hover, #okane-btn:hover, #nigeru-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* ホバー時の背景色 */
+}
+
+/*お金コマンドウィンドウ*/
+#monny-command-window{
+    position:  absolute;
+    width: 1195px; 
+    height: 460px; 
+    top: 2px;
+    left: 2px;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: block;
+    z-index: 6; 
+    border-radius: 0px; /* 角を丸める */
+    border: 0px solid white; /* 枠線を追加 */
+    font-size: 30px;
+    color: white;
+}
+/* okaneコマンド */
+#okane-command {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: white;
+    font-size: 28px;
+    z-index: 6;
+}
+.okane-command {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 1000px;
+}
+#okane1, #okane2, #okane3,#okane4, #okane5, #okane6,#okane7, #okane8, #okane9, #okane10 {
+    color: rgb(255, 255, 255);
+    height: 80px;
+    width: 300px;
+    font-size: 40px;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none; /* ボーダーを削除 */
+    margin-bottom: 5px; /* ボタン間の間隔 */
+    cursor: pointer; 
+}
+#okane1:hover, #okane2:hover, #okane3:hover,#okane4:hover, #okane5:hover, #okane6:hover,#okane7:hover, #okane8:hover, #okane9:hover, #okane10:hover{
+    background-color: rgba(255, 255, 255, 0.2); /* ホバー時の背景色 */
+}
+#okane-hover-window{
+    position:  absolute;
+    width: 750px; 
+    height: 140px; 
+    bottom: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: block;
+    z-index: 6; 
+    border-radius: 0px; /* 角を丸める */
+    border: 0px solid white; /* 枠線を追加 */
+    font-size: 25px;
+    color: white;
+}
+/*消費残高用*/
+#okane-use-coin {
+        position: absolute;
+        bottom: 30px; 
+        right: 70px; 
+        width: 400px; 
+        height: 70px; 
+        background-color: rgb(0, 0, 0);
+        display: block;
+        font-size: 32px;
+        border: 4px solid white; /* 枠線を追加 */
+        color: white; /* テキストの色を白に設定 */
+        z-index: 12;
+        display: flex; /* テキストを上下中央配置 */
+        padding-left: 20px;
+        align-items: center;
+}
+
+
+/*メッセージウィンドウ*/
+#message-window{
+    position:  absolute;
+    width: 750px; 
+    height: 270px; 
+    bottom: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+    z-index: 5; 
+    border-radius: 0px; /* 角を丸める */
+    border: 0px solid white; /* 枠線を追加 */
+    font-size: 25px;
+    color: white;
+}

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ぼくのボス戦</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="battle-frame">
+    <div id="command-frame"></div>
+
+    <!-- プレイヤー顔、st -->
+    <img id="player" src="img/顔.png" alt="player img">
+    <div id="player-st-waku"></div>
+    <div id="player-hp"></div>
+    <div id="player-coin"></div>
+    <img id="player-a-up" src="img/Aup.png" alt="player-a-up img">
+    <img id="kaneganaru" src="img/金が成る.png" alt="kaneganaru img">
+    <!-- ボス顔、st -->
+    <img id="boss" src="img/ヤクザ.png" alt="boss img">
+    <img id="neko" src="img/ねこごろ.png" alt="neko img">
+    <div id="boss-st-waku"></div>
+    <div id="boss-hp"></div>
+    <img id="boss-a-down" src="img/Adown.png" alt="boss-a-down img">
+
+    <!-- 強化画面 -->
+    <div id="kyouka">
+      <div id="kyouka-screen-1"></div>
+      <div id="kyouka-screen-2"></div>
+      <div id="kyouka-screen-3"></div>
+      <div id="kyouka-coin">残高：
+        <span id="coin">0</span>
+      </div>
+      <button id="modoru-btn">帰る</button>
+      <button id="start-battle-btn">ぼくのボス戦を始める</button>
+      <!-- 強化ステータス表示用　-->
+      <div id="kyouka-st-koumoku">
+        <div class="kyouka-stat-koumoku">
+          <div class="stat-label">　</div>
+        </div>
+        <div class="kyouka-stat-koumoku">
+          <div class="stat-label">HP : </div>
+        </div>
+        <div class="kyouka-stat-koumoku">
+          <div class="stat-label">攻撃 : </div>
+        </div>
+        <div class="kyouka-stat-koumoku">
+          <div class="stat-label">先行 : </div>
+        </div>
+      </div>
+      <div id="kyouka-st-atai">
+        <div class="kyouka-stat-atai">初期値</div>
+        <div class="kyouka-stat-atai">
+          <div class="stat-value" id="syoki-hp">100</div>
+        </div>
+        <div class="kyouka-stat-atai">
+          <div class="stat-value" id="syoki-a">10</div>
+        </div>
+        <div class="kyouka-stat-atai">
+          <div class="stat-value" id="syoki-s">10</div>
+        </div>
+      </div>
+      <div id="kyouka-st-huyasu">
+        <div class="kyouka-stat-huyasu">増加値</div>
+        <div class="kyouka-stat-huyasu">
+          <div class="stat-increase" id="hp-increase">(+0)</div>
+        </div>
+        <div class="kyouka-stat-huyasu">
+          <div class="stat-increase" id="a-increase">(+0)</div>
+        </div>
+        <div class="kyouka-stat-huyasu">
+          <div class="stat-increase" id="s-increase">(+0)</div>
+        </div>
+      </div>
+      <div id="kyouka-st-btn">
+        <div class="kyouka-stat-btn">　</div>
+        <div class="kyouka-stat-btn">
+          <button id="hp-up-btn"> + </button>
+          <button id="hp-down-btn"> - </button>
+        </div>
+        <div class="kyouka-stat-btn">
+          <button id="a-up-btn"> + </button>
+          <button id="a-down-btn"> - </button>
+        </div>
+        <div class="kyouka-stat-btn">
+          <button id="s-up-btn"> + </button>
+          <button id="s-down-btn"> - </button>
+        </div>
+      </div>
+      <div id="kyouka-st-syouhi">
+        <div class="kyouka-stat-syouhi">消費残高</div>
+        <div class="kyouka-stat-syouhi">
+          <div class="use_coin_label" id="use-hp">0</div>
+        </div>
+        <div class="kyouka-stat-syouhi">
+          <div class="use_coin_label" id="use-a">0</div>
+        </div>
+        <div class="kyouka-stat-syouhi">
+          <div class="use_coin_label" id="use-s">0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 戦闘コマンド -->
+    <div id="sentou-command">
+      <div class="sentou-command">
+        <button id="kougeki-btn"> 攻撃 </button>
+      </div>
+      <div class="sentou-command">
+        <button id="okane-btn"> お金 </button>
+      </div>
+      <div class="sentou-command">
+        <button id="nigeru-btn"> 逃げる </button>
+      </div>
+    </div>
+
+    <!-- お金コマンド選択 -->
+    <div id="monny-command-window">
+      <div id="okane-use-coin">消費：
+        <span id="okane-coin">0</span>
+      </div>
+      <div id="okane-command">
+        <div class="okane-command">
+          <button id="okane1"> 猫にこばん </button>
+          <button id="okane2"> 散財 </button>
+          <button id="okane3"> 札風呂 </button>
+        </div>
+        <div class="okane-command">
+          <button id="okane4"> 時は金なり </button>
+          <button id="okane5"> 薄利多売 </button>
+          <button id="okane6"> 孤注いってき </button>
+        </div>
+        <div class="okane-command">
+          <button id="okane7"> 金で面を張る </button>
+          <button id="okane8"> 阿弥陀の光も </button>
+          <button id="okane9"> 地獄の沙汰も </button>
+        </div>
+        <div class="okane-command">
+          <button id="okane10"> 辛抱する木に </button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="okane-hover-window">
+    </div>
+
+    <!-- メッセージウィンドウ -->
+    <div id="message-window">
+      <div id="message"></div>
+    </div>
+
+  </div>
+
+
+  <!--初期設定用-->
+  <script src="syokisettei.js"></script>
+  <!--強化画面用-->
+  <script src="kyouka.js"></script>
+  <!--ボス行動用-->
+  <script src="boss-koudou.js"></script>
+  <!--お金行動　ボタン用-->
+  <script src="okane-koudou-name.js"></script>
+  <!--ボク行動用-->
+  <script src="player-koudou.js"></script>
+
+
+  <!--戦闘処理用-->
+  <script>
+    const sanzai_hp = 4000;
+    const satuburo_hp = 8500;
+    let kaneganaru = 0;
+    let amida = 0; 
+    let enma = 0; 
+    let boss_kaihukusuru = 0 ;
+    let boss_kaihukusita=0;
+    let boss_patterm = 1;
+    let round_num = 1;
+    let okane1 = 100;
+    let okane2 = 500;
+    let okane3 = 1000;
+    let okane4 = 1000;
+    let okane5 = 50;
+    let okane6 = player.coin;
+    let okane7 = 500;
+    let okane8 = 500;
+    let okane9 = 500;
+    let okane10 = 1000;
+
+
+    const mati_1 = 1000; 
+    const mati_2 = 1500; 
+    const mati_3 = 2000;
+    let dame = 0;
+    const sleep = async (ms) =>
+      new Promise((resolve) => setTimeout(resolve, ms));
+
+
+    //ダメージ乱数
+    function kougeki_dame(a) {
+      // 7から10の乱数を生成する
+      const ransuu = Math.random() * (10 - 7) + 7;
+      const damage = Math.floor((ransuu / 10) * a);
+      return damage;
+    }
+
+    //min-maxのランダム整数
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // HPとコイン更新関数
+    function update_Hp() {
+      if (player.hp <= 0) {
+        player.hp = 0;
+      } else if (player.hp > player_hozon.hp) {
+        player.hp = player_hozon.hp;
+      }
+      player_hp.innerText = "HP : " + player.hp;
+    }
+    function update_Coin() {
+      if (player.coin <= 0) {
+        player.coin = 0;
+      } 
+      player_coin.innerText = "残高 : " + player.coin;
+    }
+    function update_BossHp() {
+      if (boss.hp <= 0) {
+        boss_hp.innerText = "HP : " + "0";
+      } else {
+        boss_hp.innerText = "HP : " + boss.hp;
+      }
+    }
+
+
+    //行動選択したら
+    async function round(coin_kind) {
+      document.querySelectorAll(".sentou-command button").forEach(function (button) {button.disabled = true;});
+      document.getElementById("nigeru-btn").disabled = "none";
+      document.getElementById("monny-command-window").style.display =  "none";
+      if(boss.hp < maxhp/2 && boss_kaihukusita == 0) boss_kaihukusuru = 1;
+      //先行
+      if (player.s >= 1) {
+        bun.innerText = "先行";
+        await player_koudou(coin_kind);
+          await boss_sindakana();
+        await boss_koudou();
+          await boku_sindakana();
+        round_fin();
+
+      }
+      //後行
+      else {
+        await boss_koudou();
+          await boku_sindakana();
+        await player_koudou(coin_kind);
+          await boss_sindakana();
+        round_fin();
+      }
+    }
+    //死んだかな
+    async function boku_sindakana() {
+      if (player.hp <= 0){
+        console.log("負けてしまった");
+        bun.innerText = "負けてしまった";
+        await sleep(mati_3);
+        alert('負けてしまった\nホームに戻ります')
+        localStorage.setItem("zandaka", zandaka_num);
+
+        location.href = "/pages/home/index.html";
+      } 
+    }
+    async function boss_sindakana() { 
+      if (boss.hp <= 0){
+        console.log("ボスを　倒した");
+        bun.innerText = "ボスを　倒した";
+        await sleep(mati_3);
+        localStorage.setItem("zandaka", zandaka_num);
+        location.href = "/pages/end/index.html";
+         //ここでエンディング
+      } 
+    }
+    //round終わり
+    function round_fin() {
+      round_num++;
+      console.log("ラウンド"+round_num);
+      bun.innerText = "どうする？";
+      document.querySelectorAll(".sentou-command button").forEach(function (button) {
+          button.disabled = false;
+      });
+    }
+  </script>
+
+
+
+
+  <!--main的な感じ-->
+  <script>
+    let okane_syouhi_coin = document.getElementById('okane-coin');
+    let player_hp = document.getElementById("player-hp");
+    let player_coin = document.getElementById("player-coin");
+    let boss_hp = document.getElementById("boss-hp");
+    let bun = document.getElementById("message");
+    let okaneHover = document.getElementById("okane-hover-window");
+    
+    //1round始まるよ
+    //攻撃クリック
+    document.getElementById("kougeki-btn").addEventListener("click", function () {
+      document.querySelectorAll(".sentou-command button").forEach(function (button) {
+          button.disabled = true;
+      });
+      round(0);
+    });
+    //逃げるクリック
+    document.getElementById("nigeru-btn").addEventListener("click", async function () {
+      console.log(player.coin);
+      zandaka_num += player.coin;
+      zandaka_num = Math.round(zandaka_num);
+      localStorage.setItem("zandaka", zandaka_num);
+      //僕は逃げたと表示
+      
+      bun.innerText = "僕は逃げた";
+      await sleep(mati_3-1000);
+      location.href = "/pages/home/index.html";
+
+      //ここでホームに戻る　zandaka_num(ステータスで使用した分　+ 未使用)
+    });
+    //お金クリック
+    document.getElementById("okane-btn").addEventListener("click", function () {
+      let mieru = document.getElementById("monny-command-window");
+      if (mieru.style.display == "none") {
+        mieru.style.display = "block";
+      } 
+      else if (mieru.style.display == "block") {
+        mieru.style.display = "none";
+      }
+    });
+    
+
+  </script>
+
+</body>
+
+</html>

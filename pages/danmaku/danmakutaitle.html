@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8" />
+    <title>ぼくの弾幕ゲーム</title>
+    <p class = "taitoru">
+        <img src="弾幕タイトル.png">
+    </p>
+
+    <p class = "boku">
+        <img src="タイトル画面用ぼく.png">
+    </p>
+
+    <p class = "okane">
+        <img src="お金.png">
+    </p>
+
+    <p class = "start">
+        Spaceでスタート
+    </p>
+
+    <style>
+
+        .taitoru{
+        position: fixed;
+         top: 50px;
+         left: 17%;
+    }
+    
+
+      .start {
+	animation: blinking 1s ease-in-out infinite alternate;
+    color: rgb(67, 123, 172);
+    font-size: 50px;
+    position: fixed;
+    bottom: 30px;
+    left: 35%;
+    }
+    .okane{
+            position: fixed;
+            left: 150px;
+            top: 350px;
+        }
+        .boku{
+            position: fixed;
+            left: 1000px;
+            top: 350px;
+        }
+ 
+@keyframes blinking {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+    </style>
+    <script>
+        //画面遷移
+        document.addEventListener('keydown',function(e){
+    if(e.code=='Space'){window.location.href = './danmakugame.html'};
+});
+    </script>
+    
+</html>

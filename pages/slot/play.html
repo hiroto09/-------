@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>ぼくのスロット</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" media="screen" href="style.css" />
+  </head>
+  <body>
+    <div class="waku">
+      <div class="slot">
+        <div id="slot-frame">
+          <ul class="reels">
+            <li class="reel" data-val="boku"><img src="/img/立つ.png" width="230px"/></li>
+            <li class="reel" data-val="hukuro_kane"><img src="/img/袋金.png"/></li>
+            <li class="reel" data-val="taiyaki"><img src="/img/たい焼き.png" width="230px"/></li>
+            <li class="reel" data-val="yakuza"><img src="/img/ヤクザ.png" /></li>
+            <li class="reel" data-val="jitensya"><img src="/img/自転車.png" width="230px"/></li>
+            <li class="reel" data-val="okane"><img src= "/img/お金.png"/></li>
+            <li class="reel" data-val="osatu"><img src="/img/osatu.png" width="230px"/></li>
+            <li class="reel" data-val="neko"><img src="/img/ねこ.png" /></li>
+            <li class="reel" data-val="boku"><img src="/img/立つ.png"/></li>
+            <li class="reel" data-val="hukuro_kane"><img src="/img/袋金.png" /></li>
+          </ul>
+          <ul class="reels">
+            <li class="reel" data-val="boku"><img src="/img/立つ.png" width="230px"/></li>
+            <li class="reel" data-val="hukuro_kane"><img src="/img/袋金.png"/></li>
+            <li class="reel" data-val="taiyaki"><img src="/img/たい焼き.png" width="230px"/></li>
+            <li class="reel" data-val="yakuza"><img src="/img/ヤクザ.png" /></li>
+            <li class="reel" data-val="jitensya"><img src="/img/自転車.png" width="230px"/></li>
+            <li class="reel" data-val="okane"><img src= "/img/お金.png"/></li>
+            <li class="reel" data-val="osatu"><img src="/img/osatu.png" width="230px"/></li>
+            <li class="reel" data-val="neko"><img src="/img/ねこ.png" /></li>
+            <li class="reel" data-val="boku"><img src="/img/立つ.png"/></li>
+            <li class="reel" data-val="hukuro_kane"><img src="/img/袋金.png" /></li>
+          </ul>
+          <ul class="reels">
+            <li class="reel" data-val="boku"><img src="/img/立つ.png" width="230px"/></li>
+            <li class="reel" data-val="hukuro_kane"><img src="/img/袋金.png"/></li>
+            <li class="reel" data-val="taiyaki"><img src="/img/たい焼き.png" width="230px"/></li>
+            <li class="reel" data-val="yakuza"><img src="/img/ヤクザ.png" /></li>
+            <li class="reel" data-val="jitensya"><img src="/img/自転車.png" width="230px"/></li>
+            <li class="reel" data-val="okane"><img src= "/img/お金.png"/></li>
+            <li class="reel" data-val="osatu"><img src="/img/osatu.png" width="230px"/></li>
+            <li class="reel" data-val="neko"><img src="/img/ねこ.png" /></li>
+            <li class="reel" data-val="boku"><img src="/img/立つ.png"/></li>
+            <li class="reel" data-val="hukuro_kane"><img src="/img/袋金.png" /></li>
+          </ul>
+        </div>
+        <div></div>
+      </div>
+
+      <div class="infomation">
+        <li id="popupButton">?</li>
+        <div id="popup" class="hidden">
+          <li id="closeButton">x</li>
+          <p class="pop_title">スロットゲーム倍率表</p>
+          <div class="list">
+            <div class="item">
+              <img src="/img/ヤクザ.png" height="100px"/>
+              <p>1倍</p>
+            </div>
+            <div class="item">
+              <img src="/img/立つ.png" height="100px"/>
+              <p>2倍</p>
+            </div>
+            <div class="item">
+              <img src="/img/ねこ.png" height="100px"/>
+              <p>3倍</p>
+            </div>
+            <div class="item">
+              <img src="/img/たい焼き.png" height="100px"/>
+              <p>4倍</p>
+              </div>
+            <div class="item">
+              <img src="/img/自転車.png" height="100px"/>
+              <p>5倍</p>
+            </div>  
+            <div class="item">
+              <img src="/img/お金.png" height="100px"/>
+              <p>6倍</p>
+            </div>
+            <div class="item">
+              <img src="/img/osatu.png" height="100px" width="100px"/>
+              <p>7倍</p>
+            </div>
+            <div class="item">
+              <img src="/img/袋金.png" height="100px"/>
+              <p>8倍</p>
+            </div>
+            </div>
+        </div>
+      </div>
+
+      <div>
+        <button
+          type="button"
+          class="stop-btn"
+          data-val="0"
+          disabled="true"
+        ></button>
+        <button
+          type="button"
+          class="stop-btn"
+          data-val="1"
+          disabled="true"
+        ></button>
+        <button
+          type="button"
+          class="stop-btn"
+          data-val="2"
+          disabled="true"
+        ></button>
+      </div>
+    </div>
+    <div class="operation">
+      <a class="back" href="/pages/home/index.html">
+        <h1>↩︎</h1>
+      </a>
+
+      <div class="money">
+        <p class="zandaka">残高:</p>
+        <p class="zandaka" id="zandaka_money"></p>
+      </div>
+      <button type="button" id="start-btn">START</button>
+    </div>
+
+    <div class="bet_box">
+      <div id="up">
+        <div>+</div>
+      </div>
+      <div class="bet-money">
+        <p id="bet"></p>
+      </div>
+      <div id="down">
+        <div class="ms">-</div>
+      </div>
+  
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    
+
+
+    
+  </body>
+</html>
